@@ -16,14 +16,14 @@ if (!appName) {
 const template = args.template || "react-swc-ts-tw";
 
 console.log("🛠 Generating project with options:");
-console.log({ appName, template });
+console.log(`App name: ${appName}`, `Template: ${template}`);
 
 // Load template path conditionally
 const templatePath = path.join(__dirname, "templates", template);
 
-const root = path.join(process.cwd(), appName);
-fs.copySync(templatePath, `${root}/apps`);
-const pkgJsonPath = path.join(root, "apps", appName, "package.json");
+const root = path.join(process.cwd(), "apps", appName);
+fs.copySync(templatePath, root);
+const pkgJsonPath = path.join(root, "package.json");
 if (!fs.existsSync(pkgJsonPath)) {
   console.error(
     `❌ Template "${template}" does not contain a valid package.json`
@@ -35,4 +35,4 @@ pkg.name = appName;
 pkg.version = "0.1.0";
 fs.writeJsonSync(pkgJsonPath, pkg, { spaces: 2 });
 
-console.log(`✅ Project "${appName}" created.`);
+console.log(`✅ Your app "${appName}" is created.`);
