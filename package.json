@@ -1,0 +1,17 @@
+{
+  "name": "gen-ai-monorepo-template",
+  "version": "1.0.0",
+  "description": "A monorepo template",
+  "main": "index.js",
+  "author": "swaroopsambhayya",
+  "license": "MIT",
+  "private": true,
+  "bin": {
+    "create-ai-monorepo": "./index.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.0",
+    "minimist": "^1.2.8",
+    "slugify": "^1.6.6"
+  }
+}
